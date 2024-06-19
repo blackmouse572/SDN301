@@ -2,7 +2,11 @@ const mongoose = require('mongoose');
 const bookName = 'Book';
 const bookSchema = new mongoose.Schema({
   _id: mongoose.Schema.Types.ObjectId,
-  isbn: {
+  summary: {
+    type: String,
+    maxLength: 1000,
+  },
+  author: {
     type: String,
     required: true,
   },
@@ -10,27 +14,19 @@ const bookSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  subTitle: {
-    type: String,
-    required: true,
-  },
-  publish_date: {
-    type: Date,
-    required: true,
-  },
   publisher: {
     type: String,
     required: true,
   },
-  pages: {
+  publication_year: {
     type: Number,
     required: true,
   },
-  description: {
+  genre: {
     type: String,
     required: true,
   },
-  website: {
+  contents: {
     type: String,
     required: true,
   },

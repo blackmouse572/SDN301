@@ -29,11 +29,13 @@ const bookRoute = require('./routes/book-route');
 const authorRoute = require('./routes/author-route');
 const genreRoute = require('./routes/genre-route');
 const commentRoute = require('./routes/comments-route');
-
-app.use('/book', bookRoute);
+const authRoute = require('./routes/auth-route');
+app.use(express.json());
 app.use('/book', commentRoute);
+app.use('/book', bookRoute);
 app.use('/author', authorRoute);
 app.use('/genre', genreRoute);
+app.use('/auth', authRoute);
 
 app.listen(port, () => {
   console.log(`Application is listening at http://localhost:${port}`);
